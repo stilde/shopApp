@@ -24,7 +24,7 @@ class HorizontalList extends StatelessWidget {
             imageLocation: images[titre],
           );
         },
-      ),
+      ), 
 
       /* in remplacement of ListView(
         scrollDirection: Axis.horizontal,

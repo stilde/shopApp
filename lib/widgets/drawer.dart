@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import '../pages/cart.dart';
 
 
-Widget drawerShop = Drawer(
+Widget drawerShop(BuildContext context) {
+   return Drawer(
         child: new ListView(
           children: <Widget>[
             //header
@@ -26,14 +28,14 @@ Widget drawerShop = Drawer(
               },
               child: ListTile(
                 title: Text('Home Page'),
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.home, color: Colors.red),
               ),
             ),
             InkWell(
               onTap: (null),
               child: ListTile(
                 title: Text('My account'),
-                leading: Icon(Icons.account_box),
+                leading: Icon(Icons.account_box, color: Colors.red),
               ),
             ),
 
@@ -41,15 +43,18 @@ Widget drawerShop = Drawer(
               onTap: (null),
               child: ListTile(
                 title: Text('My orders'),
-                leading: Icon(Icons.shopping_basket),
+                leading: Icon(Icons.shopping_basket, color: Colors.red),
               ),
             ),
 
             InkWell(
-              onTap: (null),
+              onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context)=>(Cart())
+              ));},
               child: ListTile(
-                title: Text('Categories'),
-                leading: Icon(Icons.dashboard),
+                title: Text('Shopping Cart'),
+                leading: Icon(Icons.shopping_cart, color: Colors.red),
               ),
             ),
 
@@ -87,4 +92,4 @@ Widget drawerShop = Drawer(
           ],
         ),
       );
-      
+}     

@@ -3,6 +3,7 @@ import 'widgets/carousel.dart';
 import 'widgets/drawer.dart';
 import 'package:shopapp/components/horizontal_listview.dart';
 import 'components/products.dart';
+import 'pages/cart.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -31,11 +32,15 @@ class _HomepageState extends State<Homepage> {
           ),
           new IconButton(
             icon: Icon(Icons.shopping_cart, color: Colors.white),
-            onPressed: (null),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context)=>(Cart())
+              ));
+            },
           ),
         ],
       ),
-      drawer: drawerShop,
+      drawer: drawerShop(context),
       body: new ListView(
         children: <Widget>[
           imageCarousel,
